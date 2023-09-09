@@ -1,0 +1,299 @@
+/* Navigation dans la modale */
+.js-modal-close {
+  border: none;
+  width: 100%;
+  height: 1em;
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+/* Fenetre modale Galerie Photo */
+
+.modale-wrapper {
+  width: 600px;
+  max-width: calc(100vw - 20px);
+  max-height: calc(100vh - 20px);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  overflow: auto;
+  animation: slideFromTop 0.5s both;
+}
+
+.titleModale {
+  display: flex;
+  justify-content: center;
+  font-family: "Syne";
+  font-weight: 200;
+  font-size: 25px;
+  color: black;
+}
+
+.js-modale {
+  margin: 2%;
+}
+
+.modaleGallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5em 5em 5em 5em 5em;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.CarteImage {
+  position: relative;
+  z-index: 1;
+}
+
+.modaleGallery img {
+  width: 100%;
+}
+
+.imgDelete {
+  border: none;
+  border-radius: 5px;
+  z-index: 2;
+  position: absolute;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  margin-top: 1%;
+  transform: translate(230%);
+}
+
+.imgMove {
+  border: none;
+  border-radius: 5px;
+  z-index: 3;
+  position: absolute;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  margin-top: 1%;
+  transform: translate(115%);
+}
+
+.fa-trash-can,
+.fa-arrows-up-down-left-right {
+  color: white;
+}
+
+.editButton {
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.menuModale1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: solid 1px #b3b3b3;
+  margin-left: 17.5%;
+  margin-right: 17.5%;
+  margin-bottom: 1em;
+}
+
+.ajouterPhotos {
+  margin: 2em;
+  background-color: #1d6154;
+  font-family: "Syne";
+  color: white;
+  width: 55%;
+  height: 3em;
+  border-radius: 20px;
+  margin-bottom: 2%;
+  cursor: pointer;
+  border: none;
+}
+
+.supprimerGalerie {
+  margin: 1em;
+  border: 0;
+  font-family: "Syne";
+  color: red;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Fenetre modale Ajout de Photos */
+.modale {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s both;
+}
+
+.fa-xmark {
+  font-size: 1.2em;
+}
+
+.modaleForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5%;
+}
+
+.modaleForm input,
+label,
+select {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  font-size: 1.2em;
+  width: 80%;
+  margin: 2%;
+  background-color: white;
+  border: none;
+}
+
+.modaleFormTitle {
+  justify-content: left;
+}
+
+.fa-image {
+  font-size: 5em;
+  color: #b9c5cc;
+  margin-top: 10%;
+}
+
+.selectPicture {
+  background-color: #e8f1f6;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5%;
+}
+
+.modaleFormMainTitle {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 2em;
+  color: #306685;
+  margin-top: 5%;
+  cursor: pointer;
+  background-color: #cbd6dc;
+  border-radius: 20px;
+}
+
+input[type="file"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+input#image {
+  height: 80px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modaleForm2 {
+  width: 80%;
+  border-top: solid 1px #b3b3b3;
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  padding-top: 2em;
+}
+
+#btnAjoutPhoto {
+  width: 50%;
+  height: 3em;
+  border: none;
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
+}
+
+.modalNav {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+}
+
+.modal-retour {
+  border: none;
+  background-color: white;
+  display: none;
+}
+
+#image-preview {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.emptyMsg {
+  color: red;
+  display: none;
+  width: 20em;
+}
+/* Animation de la fenetre modale */
+
+.modale[aria-hidden="true"] {
+  animation-name: fadeOut;
+}
+
+.modale[aria-hidden="true"] .modale-wrapper {
+  animation-name: slideFromBottom;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}

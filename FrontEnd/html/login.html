@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login - Sophie Bluel - Architecte d'intérieur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/login.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html#portfolio">projets</a></li>
+          <li><a href="../index.html#contact">contact</a></li>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><img src="../assets/icons/instagram.png" alt="Instagram" /></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="containerLogin">
+        <div class="cardLogin">
+          <h2>Log In</h2>
+          <form method="get">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" />
+            <label for="mdp">Mot de passe</label>
+            <input type="password" id="mdp" name="mdp" />
+            <div class="emptyMsg">Veuillez remplir tous les champs.</div>
+            <div class="errorMsg">E-mail ou mot de passe incorrect.</div>
+            <div class="btnLogin">
+              <button class="seConnecter" type="submit">Se connecter</button
+              ><br />
+            </form>
+          </div>
+          <div class="containerMdpOublie">
+              <button class="mdpOublie" type="submit">
+                Mot de passe oublié
+              </button>
+            </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="../fonctions/login.js"></script>
+  </body>
+</html>

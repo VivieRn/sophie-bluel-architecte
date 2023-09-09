@@ -1,0 +1,6 @@
+node_modules
+.env
+../Frontend/request.rest
+../Frontend/https/
+../Frontend/.vscode/
+!images/.gitkeep
